@@ -6,34 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" class="re">
+
+    <!--Source Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,700&display=swap"
+        rel="stylesheet">
+    <!--EndSource Google Font-->
+
     <title>Judi 178</title>
 </head>
 
 <body>
     <h1>Judi Online 178</h1>
     <div class="frameInput">
-        <a href="#" class="btnInput">
-            <p>Name</p>
-            <i class=""></i>
+        <!-- <a class="btnInputName">
+            <p>Kelompok 3</p>
+        </a> -->
+
+        <a href="#" class="boxSkor">
+            <h1 style="margin-top: 15vh; color: #f67828;"> 9 </h1>
         </a>
+
+       
+       
         <!-- <a href="#" class="btnInput">
             <p>Saldo</p>
             <i class=""></i>
         </a> -->
-        <button href="#" class="btnInput" data-toggle="modal" data-target="#Depo" style="border-style: none;">
-            <p>Deposit/Withdraw</p>
-        </button>
-        <div class="modal body" id="Depo" tabindex="-1" role="dialog" aria-labelledby="modalDepo"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    
+
+        <button id="myBtn" class="btnInput" style="border-style: none; cursor: pointer;">Withdraw</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Withdraw</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Silahkan masukan nominalnya untuk withdraw, lalu klik tombol Withdraw</p>
+                    <!-- <p>Some other text...</p> -->
+                    <input type="text" class='inputanWithdraw' placeholder="Masukan nominal yang ingin di withdraw"><span>
+                        <button id="myBtn" class="btnInput" style="border-style: solid; background-color: greenyellow; margin-top: 5px; cursor: pointer;">Withdraw</button>
+                    </span>
+                </div>
+                <div class="modal-footer">
+                    <h3>Tilimi Kiciw</h3>
                 </div>
             </div>
         </div>
+
+
+        <a href="#" class="boxSkor">
+            <h1 style="margin-top: 15vh; color: #f67828;"> 5 </h1>
+        </a>
+
+
     </div>
     <div class="frame card">
+        <h4 style="font-style: strong; margin-bottom: 33vh; position:absolute; text-align: left; color: #868686;"><span id="playerName">Player</span> vs Bunker</h4>
         <a href="#" class="box">
+            <!-- <h2 style="font-style: strong; margin-bottom: 33vh;">Player</h2> -->
             <i class=""></i>
         </a>
         <a href="#" class="box">
@@ -42,10 +74,16 @@
         <a href="#" class="box">
             <i class=""></i>
         </a>
-        <a href="#" class="boxdataMid">
-            <p class="weight">TIE</p>
-            <p class="weight">BANKER</p>
-            <p class="weight">PLAYER</p>
+        <a class="boxdataMid">
+        <form>
+            <!-- <p style="text-align: center;">Pilih disini :</p> -->
+              <input type="radio" id="tie" name="fav_language" value="TIE">
+              <label for="tie">TIE</label><br>
+              <input type="radio" id="bunker" name="fav_language" value="BUNKER">
+              <label for="bunker">BUNKER</label><br>
+              <input type="radio" id="player" name="fav_language" value="PLAYER">
+              <label for="player">PLAYER</label>
+        </form>
 
         </a>
         <a href="#" class="box">
@@ -57,25 +95,25 @@
         <a href="#" class="box">
             <i class=""></i>
         </a>
-        <br>
+
 
     </div>
 
 
 
     <div class="frameInput">
-        <a href="#" class="btnInput">
+        <a href="#" class="btnInput" style="background-color: yellowgreen;">
             <p><b>Play</b></p>
             <i class=""></i>
         </a>
 
-        <a href="#" class="boxdata">
+        <a  class="boxdata">
             <label>Balance</label>
             <p>Rp.100.000</p>
             <i class=""></i>
         </a>
 
-        <a href="#" class="boxdata">
+        <a class="boxdata">
             <label>Win</label>
             <p>Rp.250.000</p>
             <i class=""></i>
@@ -102,8 +140,33 @@
     </div>
     </div>
 
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
 
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
 
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
