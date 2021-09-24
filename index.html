@@ -25,7 +25,7 @@
         </a> -->
 
         <a href="#" class="boxSkor">
-            <h1 style="margin-top: 15vh; color: #f67828;"> 9 </h1>
+            <h1 id="playerTotal" style="margin-top: 8vh; color: #f67828;"> 9 </h1>
         </a>
 
        
@@ -35,18 +35,18 @@
             <i class=""></i>
         </a> -->
 
-        <button id="myBtn" class="btnInput" style="border-style: none; cursor: pointer;">Withdraw</button>
+        <button id="myBtn" class="btnInput" style="border-style: none; cursor: pointer;">Deposit/withdraw</button>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
-                    <h2>Withdraw</h2>
+                    <h2>Deposit/withdraw</h2>
                 </div>
                 <div class="modal-body">
-                    <p>Silahkan masukan nominalnya untuk withdraw, lalu klik tombol Withdraw</p>
+                    <p>Silahkan masukan nominalnya untuk (+deposit, -withdraw), lalu klik tombol submit</p>
                     <!-- <p>Some other text...</p> -->
-                    <input type="text" class='inputanWithdraw' placeholder="Masukan nominal yang ingin di withdraw"><span>
-                        <button id="myBtn" class="btnInput" style="border-style: solid; background-color: greenyellow; margin-top: 5px; cursor: pointer;">Withdraw</button>
+                    <input name="withdraw" type="text" class='inputanWithdraw' placeholder="Masukan nominal"><span>
+                        <button onclick="updateSaldo()" id="myBtn" class="btnInput" style="border-style: solid; background-color: greenyellow; margin-top: 5px; cursor: pointer;">Submit</button>
                     </span>
                 </div>
                 <div class="modal-footer">
@@ -57,15 +57,14 @@
 
 
         <a href="#" class="boxSkor">
-            <h1 style="margin-top: 15vh; color: #f67828;"> 5 </h1>
+            <h1 id="bankerTotal" style="margin-top: 8vh; color: #f67828;"> 5 </h1>
         </a>
 
 
     </div>
     <div class="frame card">
-        <h4 style="font-style: strong; margin-bottom: 33vh; position:absolute; text-align: left; color: #868686;"><span id="playerName">Player</span> vs Bunker</h4>
-        <a href="#" class="box">
-            <!-- <h2 style="font-style: strong; margin-bottom: 33vh;">Player</h2> -->
+        <!-- <h4 style="font-style: strong; margin-bottom: 33vh; position:absolute; text-align: left; color: #868686;"><span id="playerName">Player</span> vs Bunker</h4> -->
+        
         <a id="player1" href="#" class="box">
             <i class=""></i>
         </a>
@@ -114,9 +113,9 @@
             <i class=""></i>
         </a>
 
-        <a class="boxdata">
-            <label>Wager (Rp)</label>
-            <p id="showBet">250000</p>
+        <a class="boxdata" style="width: 130px; height: 60px;">
+            <label>Wager</label>
+            <p id="showBet" style="text-align: center;">25000</p>
             <i class=""></i>
 
         </a>

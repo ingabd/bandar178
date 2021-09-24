@@ -1,20 +1,15 @@
-let saldo = 20_000_000
+let saldo = 50000
+let saldoHtml = document.querySelector('#balance')
+saldoHtml.innerHTML = saldo
 
 let output = startPlay()
+let updateSaldoJS = updateSaldo()
 
-// console.log hasil
-// console.log(saldo, betPrice, bet)
-// console.log('Hasil kartu adalah: ')
-// console.log('Kartu player: ', output.playerCard, 'total poin player: ', output.playerTotal)
-// console.log('Kartu banker: ', output.bankerCard, 'total poin banker: ', output.bankerTotal)
-// console.log('Outcome: ', output.outcome)
-// console.log('Natural: ', output.natural)
-// console.log('Your bet: ', output.bet)
-// console.log('Hasil taruhan: ', output.hasil)
-// console.log('Hadiah yang diterima: ', output.prize)
-// console.log('Saldo akhir: ', output.saldo)
-// saldo = output.saldo
-
+// const stat = {
+//     play: 0,
+//     win: 0,
+//     lose: 0
+// }
 // stat.play += 1
 // if (output.prize == 0) stat.lose += 1
 // else if (output.prize == betPrice) stat.win += 1
@@ -26,21 +21,14 @@ let output = startPlay()
 
 function startPlay() {
 
-    let saldoHtml = document.getElementById('balance')
-    // saldoHtml.innerHTML = saldo
-
-    // player - banker - tie
+    // player - banker - tie, input dari html
     let bet = document.querySelector('input[name="bet"]:checked').value
-    console.log(bet, 'line 34 <<<<<<<<<<<<<<<')
+    if (bet === undefined) alert('Belum masang posisi ..')
     let betPrice = document.getElementById('betPrice').value
-    // Number(document.getElementById('betPrice').textContent)
+    let showBet = document.querySelector('#showBet')
+    showBet.innerHTML = betPrice
     let prize = 0
     if (bet === 'tie') bet = 'JACKPOT' // direname ke JACKPOT samain dgn outcome
-    // const stat = {
-    //     play: 0,
-    //     win: 0,
-    //     lose: 0
-    // }
 
     saldo -= betPrice
     if (saldo >= 0) {
@@ -48,18 +36,32 @@ function startPlay() {
         let output = miniBaccarat(bet, betPrice, prize)
         // revisi saldo oleh prize
         output.saldo = saldo + output.prize
+        let saldoHtml = document.querySelector('#balance')
         saldoHtml.innerHTML = output.saldo
-        console.log(output)
-        console.log(betPrice)
+        let playerTotalHTML = document.querySelector('#playerTotal')
+        let bankerTotalHTML = document.querySelector('#bankerTotal')
+        playerTotalHTML.innerHTML = output.playerTotal
+        bankerTotalHTML.innerHTML = output.bankerTotal
+        showBet.innerHTML = output.hasil
+        // console log untuk monitor kerja JS di browser
+        console.log(saldo, betPrice, bet)
+        console.log('Hasil kartu adalah: ')
+        console.log('Kartu player: ', output.playerCard, 'total poin player: ', output.playerTotal)
+        console.log('Kartu banker: ', output.bankerCard, 'total poin banker: ', output.bankerTotal)
+        console.log('Outcome: ', output.outcome)
+        console.log('Natural: ', output.natural)
+        console.log('Your bet: ', output.bet)
+        console.log('Hasil taruhan: ', output.hasil)
+        console.log('Hadiah yang diterima: ', output.prize)
+        console.log('Saldo akhir: ', output.saldo)
+        saldo = output.saldo
+
         return output
     } else {
+        alert('Tidak bisa main, saldo tidak mencukupi.')
         return 'Tidak bisa main, saldo tidak mencukupi.'
     }
 }
-
-// function updateStat(stat, output) {
-
-// }
 
 function miniBaccarat(bet, betPrice, prize) {
     const output = {}
@@ -213,6 +215,15 @@ function urlKartu(card) {
     let url = `url("../background/card/${kartu}.png")`
     return url
 }
+
+function updateSaldo() {
+    let update = Number(document.querySelector('input[name="withdraw"]').value)
+    saldo += update
+    let saldoHtml = document.querySelector('#balance')
+    saldoHtml.innerHTML = saldo
+    return saldo
+}
+
 
 
 
