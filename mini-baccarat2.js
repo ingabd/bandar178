@@ -22,6 +22,10 @@ let updateSaldoJS = updateSaldo()
 function startPlay() {
 
     // player - banker - tie, input dari html
+    // document.getElementById('#banker3').style.backgroundImage = ""
+    // // document.getElementById('#banker3').style.color = "grey"
+    // document.getElementById('#player3').style.backgroundImage = ""
+    // // document.getElementById('#player3').style.color = "grey"
     let bet = document.querySelector('input[name="bet"]:checked').value
     if (bet !== 'tie' && bet !=='banker' && bet!=='player') alert('Pick your winner first')
     let betPrice = document.getElementById('betPrice').value

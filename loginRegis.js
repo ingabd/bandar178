@@ -90,7 +90,7 @@ function start () {
 				password: password.value
 			})
 			if (result.validUser && result.validPass) {
-				window.location.href = '../index.html'
+				window.location.href = 'GamePage.html'
 			} 
 			alert(result.message)
 		} else {
@@ -101,7 +101,7 @@ function start () {
 			result = register([username.value, password.value, id.value])
 			if (typeof result === 'object') {
 				// console.log(result);
-				window.location.href = '../index.html'
+				window.location.href = 'GamePage.html'
 				alert(`Welcome ${result[result.length-1].id}, you SINNER! Let's get going!!`)
 			} else {
 				alert(result)
