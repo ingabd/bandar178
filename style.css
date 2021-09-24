@@ -18,13 +18,14 @@ body {
 }
 
   #heading{
-    position: absolute; 
+  position: absolute; 
   text-align: center; 
   bottom: 150px;  
   color: goldenrod; 
   font-size: 90px; 
   font-family: 'Monoton', cursive;
   font-weight: 500;
+  margin-bottom: -100px;
 
   }
   h1 {

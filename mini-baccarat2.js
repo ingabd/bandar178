@@ -1,4 +1,4 @@
-let saldo = 50000
+let saldo = 0
 let saldoHtml = document.querySelector('#balance')
 saldoHtml.innerHTML = saldo
 
