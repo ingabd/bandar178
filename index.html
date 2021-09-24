@@ -78,11 +78,11 @@
         <a class="boxdataMid">
         <form>
             <!-- <p style="text-align: center;">Pilih disini :</p> -->
-              <input type="radio" id="tie" name="fav_language" value="TIE">
+              <input type="radio" id="tie" name="bet" value="tie">
               <label for="tie">TIE</label><br>
-              <input type="radio" id="bunker" name="fav_language" value="BUNKER">
-              <label for="bunker">BUNKER</label><br>
-              <input type="radio" id="player" name="fav_language" value="PLAYER">
+              <input type="radio" id="bunker" name="bet" value="banker">
+              <label for="bunker">BANKER</label><br>
+              <input type="radio" id="player" name="bet" value="player">
               <label for="player">PLAYER</label>
         </form>
 
@@ -103,20 +103,20 @@
 
 
     <div class="frameInput">
-        <a href="#" class="btnInput" style="background-color: yellowgreen;">
+        <a onclick="startPlay()" href="#" class="btnInput" style="background-color: yellowgreen;">
             <p><b>Play</b></p>
             <i class=""></i>
         </a>
 
         <a  class="boxdata">
-            <label>Balance</label>
-            <p>Rp.100.000</p>
+            <label>Balance (Rp)</label>
+            <p id="balance">1000000</p>
             <i class=""></i>
         </a>
 
         <a class="boxdata">
-            <label>Win</label>
-            <p>Rp.250.000</p>
+            <label>Wager (Rp)</label>
+            <p id="showBet">250000</p>
             <i class=""></i>
 
         </a>
@@ -128,7 +128,7 @@
         </div> -->
 
         <!-- <a href="#" class="btnInput"> -->
-        <input type="text" class='inputan' placeholder="Wage in here">
+        <input id="betPrice" type="text" class='inputan' placeholder="Wage in here">
         <!-- <p>Open Card Bunker</p>
             <i class=""></i> -->
         <!-- <div class="input sm-2">

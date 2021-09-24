@@ -1,33 +1,67 @@
+let saldo = 20_000_000
+
+let output = startPlay()
+
+// console.log hasil
+// console.log(saldo, betPrice, bet)
+// console.log('Hasil kartu adalah: ')
+// console.log('Kartu player: ', output.playerCard, 'total poin player: ', output.playerTotal)
+// console.log('Kartu banker: ', output.bankerCard, 'total poin banker: ', output.bankerTotal)
+// console.log('Outcome: ', output.outcome)
+// console.log('Natural: ', output.natural)
+// console.log('Your bet: ', output.bet)
+// console.log('Hasil taruhan: ', output.hasil)
+// console.log('Hadiah yang diterima: ', output.prize)
+// console.log('Saldo akhir: ', output.saldo)
+// saldo = output.saldo
+
+// stat.play += 1
+// if (output.prize == 0) stat.lose += 1
+// else if (output.prize == betPrice) stat.win += 1
+// else if (output.prize > betPrice) stat.win += 1
+
+// =================================== FUNCTIONS ===================================
+
 // INPUT here, bet price and bet position
-let saldo = 1000000
-let bet = 'player' // player - banker - tie
-let betPrice = 10
-let prize = 0
-if (bet === 'tie') bet = 'JACKPOT' // direname ke JACKPOT samain dgn outcome
 
-saldo -= betPrice
+function startPlay() {
 
-if (saldo >= 0) {
-    // memanggil fungsi miniBaccarat
-    let output = miniBaccarat(bet, betPrice)
+    let saldoHtml = document.getElementById('balance')
+    // saldoHtml.innerHTML = saldo
 
-    // console.log hasil
-    console.log('Hasil kartu adalah: ')
-    console.log('Kartu player: ', output.playerCard, 'total poin player: ', output.playerTotal)
-    console.log('Kartu banker: ', output.bankerCard, 'total poin banker: ', output.bankerTotal)
-    console.log('Outcome: ', output.outcome)
-    console.log('Natural: ', output.natural)
-    console.log('Your bet: ', output.bet)
-    console.log('Hasil taruhan: ', output.hasil)
-    console.log('Hadiah yang diterima: ', output.prize)
+    // player - banker - tie
+    let bet = document.querySelector('input[name="bet"]:checked').value
+    console.log(bet, 'line 34 <<<<<<<<<<<<<<<')
+    let betPrice = document.getElementById('betPrice').value
+    // Number(document.getElementById('betPrice').textContent)
+    let prize = 0
+    if (bet === 'tie') bet = 'JACKPOT' // direname ke JACKPOT samain dgn outcome
+    // const stat = {
+    //     play: 0,
+    //     win: 0,
+    //     lose: 0
+    // }
 
-    // revisi saldo oleh prize
-    saldo += prize
-} else {
-    console.log('Tidak bisa main, saldo tidak mencukupi.')
+    saldo -= betPrice
+    if (saldo >= 0) {
+        // memanggil fungsi miniBaccarat
+        let output = miniBaccarat(bet, betPrice, prize)
+        // revisi saldo oleh prize
+        output.saldo = saldo + output.prize
+        saldoHtml.innerHTML = output.saldo
+        console.log(output)
+        console.log(betPrice)
+        return output
+    } else {
+        return 'Tidak bisa main, saldo tidak mencukupi.'
+    }
 }
 
-function miniBaccarat(bet, betPrice) {
+// function updateStat(stat, output) {
+
+// }
+
+function miniBaccarat(bet, betPrice, prize) {
     const output = {}
 
     // card deck
@@ -148,7 +182,7 @@ function miniBaccarat(bet, betPrice) {
         prize = 8 * betPrice
     } else if (bet === outcome) {
         hasil = 'Selamat, anda menang'
-        prize = betPrice
+        prize = 2 * betPrice
     } else hasil = 'Selamat, anda kalah, lol'
 
     output.playerCard = playerCard
