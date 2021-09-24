@@ -6,77 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" class="re">
-
     <!--Source Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
     <!--EndSource Google Font-->
-
+    
+</head>
     <title>Judi 178</title>
 </head>
 
 <body>
-    <h1>Judi Online 178</h1>
+    <h1 id="heading"><span style="color: red">MINI</span>  BACCARAT</h1>
     <div class="frameInput">
-        <!-- <a class="btnInputName">
-            <p>Kelompok 3</p>
-        </a> -->
 
         <a href="#" class="boxSkor">
-            <h1 id="playerTotal" style="margin-top: 8vh; color: #f67828;"> 9 </h1>
+            <h1 id="playerTotal" style="margin-top: 8vh; color: goldenrod"> - </h1>
         </a>
 
-       
-       
-        <!-- <a href="#" class="btnInput">
-            <p>Saldo</p>
-            <i class=""></i>
-        </a> -->
-
-        <button id="myBtn" class="btnInput" style="border-style: none; cursor: pointer;">Deposit/withdraw</button>
+        <button id="myBtn" class="btnInput" style=" cursor: pointer;">Deposit/ Withdraw</button>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
-                    <h2>Deposit/withdraw</h2>
+                    <h2>Deposit/ Withdraw</h2>
                 </div>
                 <div class="modal-body">
-                    <p>Silahkan masukan nominalnya untuk (+deposit, -withdraw), lalu klik tombol submit</p>
-                    <!-- <p>Some other text...</p> -->
-                    <input name="withdraw" type="text" class='inputanWithdraw' placeholder="Masukan nominal"><span>
-                        <button onclick="updateSaldo()" id="myBtn" class="btnInput" style="border-style: solid; background-color: greenyellow; margin-top: 5px; cursor: pointer;">Submit</button>
+                    <p>Please input the amount you wish to deposit (+) or withdraw (-), and click "Confirm".</p>
+                    <input name="withdraw" type="text" class='inputanWithdraw' placeholder="input amount here"><span>
+                        <button onclick="updateSaldo()" id="myBtn" class="btnInput" style="border-style: solid; background-color: red; margin-top: 5px; cursor: pointer;">Submit</button>
                     </span>
                 </div>
                 <div class="modal-footer">
-                    <h3>Tilimi Kiciw</h3>
+                    <h3>SENGKYU BERIMATS BRADAAAAA!!!</h3>
                 </div>
             </div>
         </div>
 
-
         <a href="#" class="boxSkor">
-            <h1 id="bankerTotal" style="margin-top: 8vh; color: #f67828;"> 5 </h1>
+            <h1 id="bankerTotal" style="margin-top: 8vh; color: goldenrod;"> -</h1>
         </a>
 
-
     </div>
-    <div class="frame card">
-        <!-- <h4 style="font-style: strong; margin-bottom: 33vh; position:absolute; text-align: left; color: #868686;"><span id="playerName">Player</span> vs Bunker</h4> -->
-        
+    <div class="frame card">      
         <a id="player1" href="#" class="box">
             <i class=""></i>
         </a>
         <a id="player2" href="#" class="box">
             <i class=""></i>
         </a>
-        <a id="player3" href="#" class="box">
-            <i class=""></i>
+        <a id="player3" href="#" class="box"style="background-color: grey;>
+            <i class="></i>
         </a>
         <a class="boxdataMid">
         <form>
-            <!-- <p style="text-align: center;">Pilih disini :</p> -->
               <input type="radio" id="tie" name="bet" value="tie">
               <label for="tie">TIE</label><br>
               <input type="radio" id="bunker" name="bet" value="banker">
@@ -92,50 +77,32 @@
         <a id="banker2" href="#" class="box">
             <i class=""></i>
         </a>
-        <a id="banker3" href="#" class="box">
+        <a id="banker3" href="#" class="box" style="background-color: grey;">
             <i class=""></i>
         </a>
 
 
     </div>
 
-
-
     <div class="frameInput">
-        <a onclick="startPlay()" href="#" class="btnInput" style="background-color: yellowgreen;">
+        <a onclick="startPlay()" href="#" class="btnInput">
             <p><b>Play</b></p>
             <i class=""></i>
         </a>
 
-        <a  class="boxdata">
+        <a  class="boxdata" style="width: 130px; height: 60px;">
             <label>Balance (Rp)</label>
-            <p id="balance">1000000</p>
+            <p id="balance">0</p>
             <i class=""></i>
         </a>
 
         <a class="boxdata" style="width: 130px; height: 60px;">
-            <label>Wager</label>
-            <p id="showBet" style="text-align: center;">25000</p>
+            <label>Round Result</label>
+            <p id="showBet" style="text-align: center; font-size: 10px; font-weight: bolder;">-</p>
             <i class=""></i>
 
         </a>
-        <!-- <div class="col-2">
-            <p>hay</p>
-        </div>
-        <div class="col-2">
-            <p>hay</p>
-        </div> -->
-
-        <!-- <a href="#" class="btnInput"> -->
-        <input id="betPrice" type="text" class='inputan' placeholder="Wage in here">
-        <!-- <p>Open Card Bunker</p>
-            <i class=""></i> -->
-        <!-- <div class="input sm-2">
-                <div class="input-prepend">
-                  <span class="input-text" id="basic-addon1">
-                  </div>
-                <input type="text" class="form-control" placeholder="Total" aria-label="Total" aria-describedby="basic-addon1">
-              </div> -->
+        <input id="betPrice" type="text" class='inputan' style="font-size: 10px;" placeholder="Place your bet amount here">
         </a>
     </div>
     </div>

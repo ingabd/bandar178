@@ -23,7 +23,7 @@ function startPlay() {
 
     // player - banker - tie, input dari html
     let bet = document.querySelector('input[name="bet"]:checked').value
-    if (bet === undefined) alert('Belum masang posisi ..')
+    if (bet !== 'tie' && bet !=='banker' && bet!=='player') alert('Pick your winner first')
     let betPrice = document.getElementById('betPrice').value
     let showBet = document.querySelector('#showBet')
     showBet.innerHTML = betPrice
@@ -58,8 +58,8 @@ function startPlay() {
 
         return output
     } else {
-        alert('Tidak bisa main, saldo tidak mencukupi.')
-        return 'Tidak bisa main, saldo tidak mencukupi.'
+        alert('Insufficient balance. Please reduce your bet amount or DEPOSIT MORE MONEY!!')
+        return 'Insufficient balance. Please reduce your bet amount or DEPOSIT MORE MONEY!!'
     }
 }
 
@@ -180,12 +180,12 @@ function miniBaccarat(bet, betPrice, prize) {
     // hasil bet
     let hasil = ''
     if (bet === outcome && outcome === 'JACKPOT') {
-        hasil = 'Selamat, anda menang banyak'
+        hasil = 'Wow, You Won?!'
         prize = 8 * betPrice
     } else if (bet === outcome) {
-        hasil = 'Selamat, anda menang'
+        hasil = 'Wow, You Won?!'
         prize = 2 * betPrice
-    } else hasil = 'Selamat, anda kalah, lol'
+    } else hasil = 'LOL. You LOST!!'
 
     output.playerCard = playerCard
     output.bankerCard = bankerCard

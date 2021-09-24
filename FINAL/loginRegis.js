@@ -23,11 +23,11 @@ function validasiData(object) {
 		}
 
     if (validUser && validPass){
-      message = `Selamat datang ${id}, Selamat berjudi`
+      message = `Welcome ${id}, you SINNER! Let's get going!!`
     } else if (!validUser){
-			message = `registrasi akun untuk berjudi`
+			message = `Please register an account`
     } else {
-			message = `Username atau Password anda salah`
+			message = `Incorrect username or password`
 		}
 	return {
 		validUser, 
@@ -42,7 +42,7 @@ let data = ['bidin', 'bidin123', 'bidintanjidin']
 
 function register(arrString){
     if (arrString.length != 3){
-        return `data yang dibutuhkan kurang`;
+        return `Please fill in all data`;
     } else {
         let db = {username: arrString[0], password: arrString[1], id: arrString[2]}
         db_games.push(db);
@@ -82,7 +82,7 @@ function start () {
 
 		if (isFormLogin) {
 			if (!username.value || !password.value) {
-				alert('Lengkapi data yang diperlukan')
+				alert('Please fill in all data')
 				return
 			}
 			result = validasiData({
@@ -90,19 +90,19 @@ function start () {
 				password: password.value
 			})
 			if (result.validUser && result.validPass) {
-				window.location.href = './dashboard.html'
+				window.location.href = '../index.html'
 			} 
 			alert(result.message)
 		} else {
 			if (!username.value || !password.value || !id.value) {
-				alert('Lengkapi data yang diperlukan')
+				alert('Please fill in all data')
 				return
 			}
 			result = register([username.value, password.value, id.value])
 			if (typeof result === 'object') {
 				// console.log(result);
-				window.location.href = './dashboard.html'
-				alert(`Selamat datang ${result[result.length-1].id}, Selamat berjudi`)
+				window.location.href = '../index.html'
+				alert(`Welcome ${result[result.length-1].id}, you SINNER! Let's get going!!`)
 			} else {
 				alert(result)
 			}

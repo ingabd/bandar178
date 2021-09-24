@@ -5,11 +5,28 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-position: center;
   background-image: url("loginBackground.jpg");
-  background-size: contain
-}
+  background-size: contain;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: -8px;
+  
+  /* background-image: url(../background/bg.jpg); */
+  background-size: cover;
+  z-index: 0;
 
-h1 {
-  font-size: 30px;
+}
+#heading{
+  position: absolute; 
+  text-align: center; 
+  bottom: 150px;  
+  color: goldenrod; 
+  font-size: 90px; 
+  font-family: 'Monoton', cursive;
+  font-weight: 500;
 }
 
 .style1 {
