@@ -1,24 +1,32 @@
-body {
+html {
+  font-family: 'Ubuntu', sans-serif;
+}
 
-    /* background-image: linear-gradient(to right, #666869, rgb(173, 173, 173), #1e2220); */
+body {
+ 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: -8px;
-   
     /* background-image: url(../background/bg.jpg); */
     background-size: cover;
     z-index: 0;
-}
-body {
-    
     height: 100vh;
     width: 100vw;
-    background-image: url("loginBackground.jpg");
-    
+    background-image: url("../background/bg.jpg");
+}
+
+  #heading{
+    position: absolute; 
+  text-align: center; 
+  bottom: 150px;  
+  color: goldenrod; 
+  font-size: 90px; 
+  font-family: 'Monoton', cursive;
+  font-weight: 500;
+
   }
-  
   h1 {
     position: relative;
     text-align: center;
@@ -87,16 +95,19 @@ body {
      inset 0px 0px 0px 0px goldenrod,
      inset 0px 0px 0px 0px goldenrod,        
      inset 0px 0px 0px 0px #0001;
-   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+    transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
      border-radius: 10px;
+  }
+
+  #banker1,#banker2, #player1,#player2{
+    border-color: goldenrod;
   }
   
   .box{
     height: 100px;
     width: 65px;
     border-radius: 3px;
-    background: #e0e5ec;
-    background-image: url(../background/Quimper.jpg);
+    background: goldenrod;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -104,18 +115,15 @@ body {
     align-items: center;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
-    border-color: goldenrod;
-
-   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+    transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
     font-size: 16px;
     color: black;
     text-decoration: none;
   }
 
-
   .boxdata{
     height: 50px;
-    width: 75px;
+    width: 100px;
     border-radius: 3px;
     background: goldenrod;
     /* background-image: url(../background/Quimper.jpg); */
@@ -126,38 +134,39 @@ body {
     align-items: center;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
-   
+
     font-size: 14px;
     color: black;
     text-decoration: none;
   }
 
-
-
   .boxdataMid{
-    height: 75px;
-    width: 75px;
+    /* padding-bottom: 10px;
+    margin-top: 15px; */
+    height: 100px;
+    width: 100px;
     border-radius: 3px;
-    background: #868686;
+    border-color: goldenrod;
+    background: goldenrod;
     /* background-image: url(../background/Quimper.jpg); */
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
-    box-shadow:
+    /* box-shadow:
      -7px -7px 20px 0px #fff9,
      -4px -4px 5px 0px #fff9,
      7px 7px 20px 0px #0002,
      4px 4px 5px 0px #0001,
      inset 0px 0px 0px 0px #fff9,
      inset 0px 0px 0px 0px #0001,
-     inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
+     inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001; */
    transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
     font-size: 14px;
-    color: rgb(255, 255, 255);
+    color: black;
     text-decoration: none;
   }
 
@@ -173,12 +182,31 @@ body {
     height: 35px;
     width: 150px;
     border-radius: 3px;
-    background: #e0e5ec;
+    background: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    
+   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+    font-size: 16px;
+    color:white;
+    text-decoration: none;
+    border-color: white;
+  }
+
+  .btnInputName{
+    height: 35px;
+    width: 150px;
+    border-radius: 3px;
+    /* background: #660546; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
     box-shadow:
      -7px -7px 20px 0px #fff9,
@@ -188,12 +216,14 @@ body {
      inset 0px 0px 0px 0px #fff9,
      inset 0px 0px 0px 0px #0001,
      inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
-   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81); */
     font-size: 16px;
-    color: rgba(42, 52, 84, 1);
+    color: rgb(43, 43, 43);
     text-decoration: none;
   }
-
+.boxSkor{
+  text-decoration: none
+}
 
 h1{
     font: 20px;
@@ -221,5 +251,73 @@ label {
 }
 
 .inputan{
-    border-radius: 5px; border-style: none; height: 20px; text-align: center; font-style: italic;
+    border-radius: 5px; border-style: none; height: 20px; text-align: center; font-style: italic; width: 20%;
+}
+
+
+.inputanWithdraw{
+  border-radius: 5px; border-style:groove; height: 20px; text-align: left; font-style: italic; width: 60%;
+}
+
+
+/*MODAL-START*/
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 20px;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+/*MODAL-END*/
+
+#playerName{
+  color: black;
 }
